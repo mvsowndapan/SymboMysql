@@ -1,0 +1,38 @@
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>welcome</title>
+  <link rel="stylesheet" href="../index.css" />
+</head>
+
+<body>
+  <div class="QueryContainer">
+    <div class="card">
+      <div class="container">
+        <p>Sql Query</p>
+        <form action="/verify" method="post">
+          <textarea rows="7" cols="86" placeholder="Enter the query...." name="query"></textarea><br><br />
+          <input type="submit" value="Validate" class="button" />
+        </form>
+      </div>
+      {{#if err}}
+      <div class="danger">
+        <strong>{{err}}</strong>
+      </div>
+      {{else if message}}
+      <div class="success">
+        <strong>{{message}}</strong>
+      </div>
+      {{else if testcase}}
+      <div class="info">
+        <strong>{{testcase}}</strong>
+      </div>
+      {{/if}}
+    </div>
+  </div>
+</body>
+
+</html>
